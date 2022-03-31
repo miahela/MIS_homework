@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:great_places/screens/auth_screen.dart';
 import 'package:provider/provider.dart';
 
 import './add_place_screen.dart';
@@ -15,6 +16,12 @@ class PlacesListScreen extends StatelessWidget {
             icon: Icon(Icons.add),
             onPressed: () {
               Navigator.of(context).pushNamed(AddPlaceScreen.routeName);
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.login),
+            onPressed: () {
+              Navigator.of(context).pushNamed(AuthScreen.routeAuth);
             },
           )
         ],
