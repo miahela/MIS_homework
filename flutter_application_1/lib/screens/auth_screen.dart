@@ -4,10 +4,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-
+import 'package:great_places/widgets/auth_form.dart';
 
 class AuthScreen extends StatefulWidget {
+  static const routeAuth = '/login';
   @override
   _AuthScreenState createState() => _AuthScreenState();
 }
@@ -19,20 +19,15 @@ class _AuthScreenState extends State<AuthScreen> {
     String email,
     String password,
     String username,
-    File image,
     bool isLogin,
     BuildContext ctx,
   ) async {
-    
     try {
       setState(() {
         _isLoading = true;
       });
       if (isLogin) {
-
-      } else {
-
-      }
+      } else {}
     } on PlatformException catch (err) {
       var message = 'An error occurred, pelase check your credentials!';
 
@@ -55,10 +50,10 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      // body: AuthForm(
-      //   _submitAuthForm,
-      //   _isLoading,
-      // ),
+      body: AuthForm(
+        _submitAuthForm,
+        _isLoading,
+      ),
     );
   }
 }
