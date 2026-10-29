@@ -1,4 +1,4 @@
-const apiKey = 'REMOVED_PRIVATE_VALUE';
+const apiKey = String.fromEnvironment('GOOGLE_MAPS_API_KEY');
 
 class LocationHelper {
   static String generateLocationPreview({double latitude, double longitude}) {
